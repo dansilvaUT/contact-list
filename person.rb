@@ -15,6 +15,18 @@ class Person
         @phone_number = value
     end
 
+    #Getter methods
+    def getName
+        @name
+    end
+
+    def getAge
+        @age
+    end
+
+    def getPhoneNumber 
+        @phone_number
+    end
     #ToString method
     def to_s
         "Name: #{@name} Age: #{@age} PhoneNumber: #{@phone_number}"
