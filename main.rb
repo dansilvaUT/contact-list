@@ -22,18 +22,22 @@ require './person'
 
     #add contact
     def self.add_contact
-        new_contact_hash = {}
-        
+        #Get contact info
         puts "What's the contact name:"
         name = gets.strip
+        new_contact_hash[:name] = name
 
         puts "What's the age:"
         age = gets.strip
+        new_contact_hash[:age] = age
 
         puts "Whats the phone number:"
         phone_number = gets.strip
+        new_contact_hash[:phone_number] = phone_number
 
         contact = Person.new(name, age, phone_number)
+
+        @contacts << { name: contact.getName, age: contact.getAge, phone_number: contact.getPhoneNumber}
     end
 
     #print contact list
@@ -43,6 +47,6 @@ require './person'
         end
     end
 
-    #print_contact_list(@contacts)
     add_contact
+    print_contact_list(@contacts)
 end
